@@ -1,4 +1,4 @@
-# Yveline Chronicle
+# Evelyne Chronicle
 
 Yveline Chronicle is a weather website that provides users with current weather information, historical weather data, and daily news updates.
 
