@@ -78,14 +78,14 @@ function Cards() {
           <p className="temperature">37°</p>
         </div>
       </div>
-      <div className="card cardMiddle">
+      <div className={meteoVisuel[1].class}>
         <h3 className="date">59/42</h3>
         <div className="cardContent">
           <img src={meteoVisuel[1].image} alt={meteoVisuel[1].description} />
           <p className="temperature">18°</p>
         </div>
       </div>
-      <div className="card cardBottom">
+      <div className={meteoVisuel[2].class}>
         <h3 className="date">60/42</h3>
         <div className="cardContent">
           <img src={meteoVisuel[2].image} alt={meteoVisuel[2].description} />

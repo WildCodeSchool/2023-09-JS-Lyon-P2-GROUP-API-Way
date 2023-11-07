@@ -36,31 +36,31 @@
 .card:hover {
   height: 33vh;
 }
-.card:hover .clearSky {
+.card:hover.clearSky {
   background-color: #f28076;
 }
-.card:hover .fewClouds {
+.card:hover.fewClouds {
   background-color: #ffb6af;
 }
-.card:hover .scatteredClouds {
+.card:hover.scatteredClouds {
   background-color: #ffd273;
 }
-.card:hover .brokenClouds {
+.card:hover.brokenClouds {
   background-color: #fee686;
 }
-.card:hover .showerRain {
+.card:hover.showerRain {
   background-color: #4eb098;
 }
-.card:hover .rain {
+.card:hover.rain {
   background-color: #fbc193;
 }
-.card:hover .thunderstorm {
+.card:hover.thunderstorm {
   background-color: #b8e7ea;
 }
-.card:hover .snow {
+.card:hover.snow {
   background-color: #081f71;
 }
-.card:hover .mist {
+.card:hover.mist {
   background-color: #bfaee3;
 }
 .card:hover .temperature {

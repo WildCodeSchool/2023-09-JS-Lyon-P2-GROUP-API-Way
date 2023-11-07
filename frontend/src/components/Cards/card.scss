@@ -1,50 +1,39 @@
-$height-main: 72vh;
-$fontTempFocus: 60pt;
-$fontTempUnfocus: 40pt;
-$fontDate: 20pt;
-$sizeIconFocus: 14vh;
-$sizeIconUnfocus: 10vh;
-$cardHeightFocus: 33vh;
-$cardHeightUnfocus: 20vh;
-$marginArroundItems: 1.5vh;
-$sun: #f28076;
-
 @import "../style.scss";
 
 @mixin colorMeteo {
-  .clearSky {
+  &.clearSky {
     background-color: $sun;
   }
 
-  .fewClouds {
+  &.fewClouds {
     background-color: $cloudSun;
   }
 
-  .scatteredClouds {
+  &.scatteredClouds {
     background-color: $scatteredCloud;
   }
 
-  .brokenClouds {
+  &.brokenClouds {
     background-color: $brokenCloud;
   }
 
-  .showerRain {
+  &.showerRain {
     background-color: $rain;
   }
 
-  .rain {
+  &.rain {
     background-color: $rainSun;
   }
 
-  .thunderstorm {
+  &.thunderstorm {
     background-color: $storm;
   }
 
-  .snow {
+  &.snow {
     background-color: $snow;
   }
 
-  .mist {
+  &.mist {
     background-color: $smog;
   }
 }
