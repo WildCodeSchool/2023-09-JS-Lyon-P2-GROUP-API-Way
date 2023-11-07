@@ -1,0 +1,47 @@
+$sun: #f28076;
+$cloudSun: #ffb6af;
+$scatteredCloud: #ffd273;
+$brokenCloud: #fee686;
+$rain: #4eb098;
+$rainSun: #fbc193;
+$storm: #b8e7ea;
+$snow: #081f71;
+$smog: #bfaee3;
+
+@mixin colorMeteo {
+  .clearSky {
+    background-color: $sun;
+  }
+
+  .fewClouds {
+    background-color: $cloudSun;
+  }
+
+  .scatteredClouds {
+    background-color: $scatteredCloud;
+  }
+
+  .brokenClouds {
+    background-color: $brokenCloud;
+  }
+
+  .showerRain {
+    background-color: $rain;
+  }
+
+  .rain {
+    background-color: $rainSun;
+  }
+
+  .thunderstorm {
+    background-color: $storm;
+  }
+
+  .snow {
+    background-color: $snow;
+  }
+
+  .mist {
+    background-color: $smog;
+  }
+}
