@@ -1,34 +1,49 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-function WeatherAPI() {
-  const city = "Lyon";
-  const apiKey = "b68e3c8b3a181508b0ac48be82afd936";
-  const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=8&appid=${apiKey}&units=metric`;
+const api = {
+  key: "b68e3c8b3a181508b0ac48be82afd936",
+  base: "https://api.openweathermap.org/data/2.5/",
+};
 
-  const [weatherData, setWeatherData] = useState(null);
+function App() {
+  const [search, setSearch] = useState("");
+  const [weather, setWeather] = useState({});
 
-  const fetchData = () => {
-    fetch(apiUrl)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setWeatherData(data);
-      })
-      .catch((error) => {
-        // Gestion des erreurs
-        console.error(error);
+  const searchPressed = () => {
+    fetch(`${api.base}weather?q=${search}&units=metric&APPID=${api.key}`)
+      .then((res) => res.json())
+      .then((result) => {
+        setWeather(result);
       });
   };
 
-  console.info(weatherData);
   return (
-    <div>
-      <button type="button" onClick={fetchData}>
-        Obtenir les données{" "}
-      </button>
+    <div className="App">
+      <div>
+        <input
+          type="text"
+          placeholder="Enter city/town..."
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <button type="button" onClick={searchPressed}>
+          Search
+        </button>
+      </div>
+
+      {typeof weather.main !== "undefined" ? (
+        <div>
+          <p>{weather.name}</p>
+
+          <p>{weather.main.temp}°C</p>
+
+          <p>{weather.weather[0].main}</p>
+          <p>({weather.weather[0].description})</p>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
 
-export default WeatherAPI;
+export default App;
