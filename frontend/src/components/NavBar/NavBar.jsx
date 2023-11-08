@@ -1,24 +1,24 @@
 import React from "react";
-import PropTypes from "prop-types";
-import SearchButton from "./SearchButton"; // Importez le composant SearchButton
+import SearchButton from "./SearchButton";
+import "./navbar.css";
 
-function Navbar({ handleSearchClick }) {
+function Navbar() {
   return (
     <div className="navbar">
-      <SearchButton onClick={handleSearchClick} />{" "}
+      <SearchButton className="buttonSearchLeft" />{" "}
       {/* Utilisez le composant SearchButton à gauche */}
-      <div className="center-content">
-        <img src="/src/assets/logo2.png" alt="Logo Dhéliat Chronicle" />
+      <div className="centerContent">
+        <img
+          src="/src/assets/logo2.png"
+          alt="Logo Dhéliat Chronicle"
+          className="logoApp"
+        />
         <h1>Dhéliat Chronicle</h1>
       </div>
-      <SearchButton onClick={handleSearchClick} />{" "}
+      <SearchButton className="buttonSearchRight" />{" "}
       {/* Utilisez le composant SearchButton à droite */}
     </div>
   );
 }
-
-Navbar.propTypes = {
-  handleSearchClick: PropTypes.func.isRequired,
-};
 
 export default Navbar;
