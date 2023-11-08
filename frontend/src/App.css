@@ -1,0 +1,19 @@
+header {
+  border: 2px solid blue;
+  width: 100%;
+  height: 10vh;
+}
+
+main {
+  border: 2px solid green;
+  width: 100%;
+  min-height: calc(100% - 20vh);
+}
+
+footer {
+  border: 2px solid blue;
+  width: 100%;
+  height: 10vh;
+}
+
+/*# sourceMappingURL=App.css.map */
