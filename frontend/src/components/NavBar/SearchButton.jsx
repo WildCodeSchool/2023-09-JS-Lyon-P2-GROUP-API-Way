@@ -8,6 +8,7 @@ function SearchButton() {
         className="buttonSearchNavBar"
         onClick="window.location.href = '../../pages/SearchPage.jsx;"
         type="button"
+        aria-label="Rechercher"
       >
         <Magnifyingred />
       </button>{" "}
