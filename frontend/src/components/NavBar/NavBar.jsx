@@ -9,12 +9,14 @@ function Navbar() {
         <SearchButton /> {/* Utilisez le composant SearchButton à gauche */}
       </div>
       <div className="centerContent">
-        <img
-          src="/src/assets/logo2.png"
-          alt="Logo Dhéliat Chronicle"
-          className="logoApp"
-        />
-        <h1>Dhéliat Chronicle</h1>
+        <a href="/accueil">
+          <img
+            src="/src/assets/logo2.png"
+            alt="Logo Dhéliat Chronicle"
+            className="logoApp"
+          />
+          <h1>Dhéliat Chronicle</h1>
+        </a>
       </div>
       <div className="buttonSearchRight">
         <SearchButton /> {/* Utilisez le composant SearchButton à droite */}
