@@ -1,16 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Importez Link depuis react-router-dom
 import Magnifyingred from "../../assets/Magnifyingred";
 
 function SearchButton() {
   return (
-    <div className="buttonnavbar">
+    <div>
       <button
         className="buttonSearchNavBar"
-        onClick="window.location.href = '../../pages/SearchPage.jsx;"
         type="button"
-        aria-label="Rechercher"
+        aria-label="Lien vers la page recherche"
       >
-        <Magnifyingred />
+        <Link to="/recherche" className="search-button">
+          <Magnifyingred />
+        </Link>
       </button>{" "}
     </div>
   );

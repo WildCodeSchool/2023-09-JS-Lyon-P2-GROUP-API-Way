@@ -1,8 +1,18 @@
+html {
+  background-color: #333333;
+  width: 100%;
+  height: 100%;
+}
+.onboarding-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 img {
   border-radius: 25px;
-  width: 80%;
-  display: grid;
-  justify-content: center;
+  width: 80vh;
+  aspect-ratio: 1;
 }
 
 @-webkit-keyframes animate-svg-stroke-1 {

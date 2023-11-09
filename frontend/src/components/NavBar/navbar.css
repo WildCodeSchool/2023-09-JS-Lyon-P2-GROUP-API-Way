@@ -11,10 +11,11 @@ footer {
   bottom: 0;
   align-items: center;
   justify-content: space-between;
-  border-color: aqua;
-  border: solid;
 }
-
+h1 {
+  text-decoration: none;
+  color: white;
+}
 .footer-content {
   display: flex;
   align-items: center;
@@ -23,8 +24,8 @@ footer {
 }
 
 .logoApp {
-  aspect-ratio: 1;
-  max-height: 10dvh;
+  width: auto;
+  max-height: 9dvh;
   margin-right: 15px;
 }
 
@@ -35,7 +36,7 @@ footer {
   width: 100%;
 }
 
-.centerContent {
+.centerContent > * {
   display: flex;
   flex-direction: row;
   object-fit: contain;
@@ -44,6 +45,7 @@ footer {
   margin-left: 10px;
   margin-left: 10px;
 }
+
 .buttonSearchNavBar {
   border: none;
   background: transparent;
@@ -52,13 +54,15 @@ footer {
   border-radius: 50%;
   width: 8vh;
   height: 8vh;
-  background-color: aqua;
+  background-color: #424242;
 }
 
-.buttonSearchNavBar > svg {
+.buttonSearchNavBar > a > svg {
   width: 5vh;
 }
-
+.buttonSearchNavBar > a > svg path {
+  fill: white;
+}
 .buttonSearchLeft {
   display: none;
 }

@@ -5,18 +5,22 @@ import "./navbar.css";
 function Navbar() {
   return (
     <div className="navbar">
-      <SearchButton className="buttonSearchLeft" />{" "}
-      {/* Utilisez le composant SearchButton à gauche */}
-      <div className="centerContent">
-        <img
-          src="/src/assets/logo2.png"
-          alt="Logo Dhéliat Chronicle"
-          className="logoApp"
-        />
-        <h1>Dhéliat Chronicle</h1>
+      <div className="buttonSearchLeft">
+        <SearchButton /> {/* Utilisez le composant SearchButton à gauche */}
       </div>
-      <SearchButton className="buttonSearchRight" />{" "}
-      {/* Utilisez le composant SearchButton à droite */}
+      <div className="centerContent">
+        <a href="/accueil">
+          <img
+            src="/src/assets/logo2.png"
+            alt="Logo Dhéliat Chronicle"
+            className="logoApp"
+          />
+          <h1>Dhéliat Chronicle</h1>
+        </a>
+      </div>
+      <div className="buttonSearchRight">
+        <SearchButton /> {/* Utilisez le composant SearchButton à droite */}
+      </div>
     </div>
   );
 }
