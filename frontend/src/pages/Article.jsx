@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "../components/NavBar/NavBar";
 
 // JSON fictif
 const mockData = {
@@ -37,6 +38,12 @@ function Article() {
         />
         Votre navigateur ne supporte pas la lecture de vidéos.
       </video>
+      <footer>
+        {" "}
+        <div className="footer-content">
+          <Navbar />
+        </div>
+      </footer>{" "}
     </div>
   );
 }

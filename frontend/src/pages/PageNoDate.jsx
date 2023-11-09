@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import searchingFilesImage from "../assets/searchDate.jpg";
 import arrowRightImage from "../assets/arrow-right-solid.svg"; // Utilisez l'instruction d'import pour l'image de la flèche
+import Navbar from "../components/NavBar/NavBar";
 
 function PageNoDate() {
   return (
@@ -23,6 +24,12 @@ function PageNoDate() {
           className="nextArrow"
         />
       </div>
+      <footer>
+        {" "}
+        <div className="footer-content">
+          <Navbar />
+        </div>
+      </footer>{" "}
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import "./searchPage.css";
+import Navbar from "../components/NavBar/NavBar";
 
 function SearchPage() {
   return (
@@ -7,8 +8,13 @@ function SearchPage() {
       <form className="" action="">
         <input placeholder="Search..." type="text" />
         <input type="submit" value="Go" />
-        <button type="button">Votre texte du bouton</button>
       </form>
+      <footer>
+        {" "}
+        <div className="footer-content">
+          <Navbar />
+        </div>
+      </footer>{" "}
     </div>
   );
 }
