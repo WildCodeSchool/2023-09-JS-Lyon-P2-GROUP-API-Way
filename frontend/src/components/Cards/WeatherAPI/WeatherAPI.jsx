@@ -18,7 +18,7 @@ function WeatherAPI() {
   };
 
   return (
-    <div className="App">
+    <div className="weatherAPI">
       <div>
         <input
           type="text"

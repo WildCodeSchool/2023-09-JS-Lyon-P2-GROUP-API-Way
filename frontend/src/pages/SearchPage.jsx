@@ -1,14 +1,12 @@
 import React from "react";
 import "./searchPage.css";
 import Navbar from "../components/NavBar/NavBar";
+import WeatherAPI from "../components/Cards/WeatherAPI/WeatherAPI";
 
 function SearchPage() {
   return (
     <div className="search">
-      <form className="" action="">
-        <input placeholder="Search..." type="text" />
-        <input type="submit" value="Go" />
-      </form>
+      <WeatherAPI />
       <footer>
         {" "}
         <div className="footer-content">
