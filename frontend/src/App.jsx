@@ -2,6 +2,8 @@ import "./App.css";
 import Navbar from "./components/NavBar/NavBar";
 import Cards from "./components/Cards/Cards";
 import DateList from "./components/DateList/DateList";
+import WeatherAPI from "./components/Cards/WeatherAPI/WeatherAPI";
+import { ApiWeatherProvider } from "./components/contexts/ApiWeatherContext";
 
 function App() {
   // Titre de la page (passez le titre en tant que prop)
@@ -13,7 +15,10 @@ function App() {
         <h1>{pageTitle}</h1>
       </header>
       <main>
-        <Cards />
+        <ApiWeatherProvider>
+          <WeatherAPI />
+          <Cards />
+        </ApiWeatherProvider>
         <DateList />
       </main>
       <footer>
