@@ -1,20 +1,25 @@
 import "./App.css";
-import WeatherAPI from "./components/Cards/WeatherAPI/WeatherAPI";
-import Navbar from "./NavBar";
+import Navbar from "./components/NavBar/NavBar";
 import Cards from "./components/Cards/Cards";
 import DateList from "./components/DateList/DateList";
 
 function App() {
+  // Titre de la page (passez le titre en tant que prop)
+  const pageTitle = "Titre de la page actuelle";
+  // rendu de la page
   return (
     <div>
-      <WeatherAPI />
-      <header />
+      <header>
+        <h1>{pageTitle}</h1>
+      </header>
       <main>
         <Cards />
         <DateList />
       </main>
       <footer>
-        <Navbar />
+        <div className="footer-content">
+          <Navbar />
+        </div>
       </footer>
     </div>
   );
