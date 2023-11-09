@@ -8,7 +8,7 @@ import Onboarding from "./pages/Onboarding";
 import SearchPage from "./pages/SearchPage";
 import PageError from "./pages/PageError";
 import DateList from "./components/DateList/DateList";
-import Articles from "./components/DateList/Articles";
+import Article from "./pages/Article";
 import PageNoDate from "./pages/PageNoDate";
 
 const router = createBrowserRouter([
@@ -38,8 +38,8 @@ const router = createBrowserRouter([
     title: "(ville actuelle)",
   },
   {
-    path: "/articles",
-    element: <Articles />,
+    path: "/article",
+    element: <Article />,
     title: "(date de l'article)",
   },
   {
