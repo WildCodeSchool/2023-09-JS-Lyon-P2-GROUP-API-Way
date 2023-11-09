@@ -3,19 +3,16 @@ $height-main: calc(100% - ($height-main-footer * 2));
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
 
 header {
-  border: 2px solid blue;
   width: 100%;
   height: $height-main-footer;
 }
 
 main {
-  border: 2px solid green;
   width: 100%;
   min-height: $height-main;
 }
 
 footer {
-  border: 2px solid blue;
   width: 100%;
   height: $height-main-footer;
 }
