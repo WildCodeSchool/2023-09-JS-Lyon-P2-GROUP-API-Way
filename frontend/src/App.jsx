@@ -2,7 +2,6 @@ import "./App.css";
 import Navbar from "./components/NavBar/NavBar";
 import Cards from "./components/Cards/Cards";
 import DateList from "./components/DateList/DateList";
-import WeatherAPI from "./components/Cards/WeatherAPI/WeatherAPI";
 import { ApiWeatherProvider } from "./components/contexts/ApiWeatherContext";
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
       </header>
       <main>
         <ApiWeatherProvider>
-          <WeatherAPI />
           <Cards />
         </ApiWeatherProvider>
         <DateList />

@@ -3,15 +3,30 @@ html {
   width: 100%;
   height: 100%;
 }
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .onboarding-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
+onboarding-container > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.onboarding-container > a > img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 img {
   border-radius: 25px;
-  width: 80vh;
+  width: 60vh;
   aspect-ratio: 1;
 }
 
