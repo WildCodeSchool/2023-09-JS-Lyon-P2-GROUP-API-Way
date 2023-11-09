@@ -1,6 +1,5 @@
 import "./App.css";
 import Navbar from "./components/NavBar/NavBar";
-import WeatherAPI from "./components/Cards/WeatherAPI/WeatherAPI";
 import Cards from "./components/Cards/Cards";
 import DateList from "./components/DateList/DateList";
 
