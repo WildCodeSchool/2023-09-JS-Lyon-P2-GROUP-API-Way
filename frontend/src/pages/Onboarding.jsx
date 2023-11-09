@@ -5,7 +5,9 @@ import "./onboarding.css";
 function Onboarding() {
   return (
     <div className="onboarding-container">
-      <img src={logo} alt="Le logo de Dhéliat Chronicle" />
+      <a href="/accueil">
+        <img src={logo} alt="Le logo de Dhéliat Chronicle" />
+      </a>{" "}
     </div>
   );
 }
