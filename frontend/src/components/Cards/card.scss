@@ -1,0 +1,100 @@
+@import "../style.scss";
+
+@mixin colorMeteo {
+  &.clearSky {
+    background-color: $sun;
+  }
+
+  &.fewClouds {
+    background-color: $cloudSun;
+  }
+
+  &.scatteredClouds {
+    background-color: $scatteredCloud;
+  }
+
+  &.brokenClouds {
+    background-color: $brokenCloud;
+  }
+
+  &.showerRain {
+    background-color: $rain;
+  }
+
+  &.rain {
+    background-color: $rainSun;
+  }
+
+  &.thunderstorm {
+    background-color: $storm;
+  }
+
+  &.snow {
+    background-color: $snow;
+  }
+
+  &.mist {
+    background-color: $smog;
+  }
+}
+
+@mixin onFocus {
+  height: $cardHeightFocus;
+  @include colorMeteo;
+
+  .temperature {
+    font-size: $fontTempFocus;
+  }
+
+  img {
+    height: $sizeIconFocus;
+    width: $sizeIconFocus;
+  }
+}
+
+@mixin unFocus {
+  height: $cardHeightUnfocus;
+  background-color: #333333;
+
+  .temperature {
+    font-size: $fontTempUnfocus;
+  }
+
+  img {
+    height: $sizeIconUnfocus;
+    width: $sizeIconUnfocus;
+  }
+}
+
+.card {
+  width: 100%;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  @include unFocus;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: space-around;
+
+  .date {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .cardContent {
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  img,
+  .temperature,
+  .date {
+    margin: $marginArroundItems;
+  }
+}
+
+.card:hover {
+  @include onFocus;
+}

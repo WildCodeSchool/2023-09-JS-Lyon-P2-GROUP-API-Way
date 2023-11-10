@@ -1,0 +1,85 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+
+footer {
+  width: 99%;
+  height: 10dvh;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  align-items: center;
+  justify-content: space-between;
+}
+h1 {
+  text-decoration: none;
+  color: white;
+}
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logoApp {
+  width: auto;
+  max-height: 9dvh;
+  margin-right: 15px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.centerContent > * {
+  display: flex;
+  flex-direction: row;
+  object-fit: contain;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-left: 10px;
+}
+
+.buttonSearchNavBar {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 50%;
+  width: 8vh;
+  height: 8vh;
+  background-color: #424242;
+}
+
+.buttonSearchNavBar > a > svg {
+  width: 5vh;
+}
+.buttonSearchNavBar > a > svg path {
+  fill: white;
+}
+.buttonSearchLeft {
+  display: none;
+}
+
+.buttonSearchLeft:focus,
+.buttonSearchRight:focus {
+  outline-style: outset;
+  background-color: blue;
+}
+.buttonSearchLeft:hover,
+.buttonSearchRight:hover {
+  outline-style: outset;
+  background-color: blue;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .buttonSearchLeft {
+    display: block;
+  }
+}
