@@ -1,7 +1,6 @@
 import "./App.css";
 import Navbar from "./components/NavBar/NavBar";
 import Cards from "./components/Cards/Cards";
-import DateList from "./components/DateList/DateList";
 import { ApiWeatherProvider } from "./components/contexts/ApiWeatherContext";
 
 function App() {
@@ -15,7 +14,6 @@ function App() {
         <ApiWeatherProvider>
           <Cards />
         </ApiWeatherProvider>
-        <DateList />
       </main>
       <footer>
         <div className="footer-content">
