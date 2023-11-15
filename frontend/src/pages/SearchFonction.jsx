@@ -1,8 +1,7 @@
 import { useApiWeatherContext } from "../components/contexts/ApiWeatherContext";
 
 function SearchFonction() {
-  const { searchPressed } = useApiWeatherContext;
-  const { actions } = useApiWeatherContext;
+  const { searchPressed, setSearch } = useApiWeatherContext();
 
   return (
     <div className="weatherAPI">
@@ -10,7 +9,7 @@ function SearchFonction() {
         <input
           type="text"
           placeholder="Enter city/town..."
-          onChange={(e) => actions.setSearch(e.target.value)}
+          onChange={(e) => setSearch(e.target.value)}
         />
         <button type="button" onClick={searchPressed}>
           Search

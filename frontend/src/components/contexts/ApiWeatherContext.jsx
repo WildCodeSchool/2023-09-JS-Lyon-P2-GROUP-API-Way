@@ -8,7 +8,7 @@ import React, {
 import PropTypes from "prop-types";
 
 const api = {
-  key: "b68e3c8b3a181508b0ac48be82afd936",
+  key: import.meta.env.VITE_SECRET_API_KEY,
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
@@ -17,6 +17,7 @@ const ApiWeatherContext = createContext();
 export function ApiWeatherProvider({ children }) {
   const [search, setSearch] = useState("Lyon");
   const [weather, setWeather] = useState();
+
   const searchPressed = () => {
     fetch(`${api.base}forecast?q=${search}&units=metric&appid=${api.key}`)
       .then((res) => res.json())
