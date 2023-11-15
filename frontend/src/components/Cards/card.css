@@ -1,7 +1,8 @@
 .card {
   width: 100%;
   color: white;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif, "Franklin Gothic Medium", "Arial Narrow",
+    Arial, sans-serif;
   height: 20vh;
   background-color: #333333;
   display: flex;

@@ -2,6 +2,11 @@ $height-main-footer: 10vh;
 $height-main: calc(100% - ($height-main-footer * 2));
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
 
+body {
+  background-color: #333333;
+  margin: 0px;
+}
+
 header {
   width: 100%;
   height: $height-main-footer;
