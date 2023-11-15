@@ -1,12 +1,11 @@
 import React from "react";
-import "./searchPage.css";
 import Navbar from "../components/NavBar/NavBar";
-import WeatherAPI from "../components/Cards/WeatherAPI/WeatherAPI";
+import SearchFonction from "./SearchFonction";
 
 function SearchPage() {
   return (
     <div className="search">
-      <WeatherAPI />
+      <SearchFonction />
       <footer>
         {" "}
         <div className="footer-content">
