@@ -6,7 +6,7 @@ import { ApiWeatherProvider } from "./components/contexts/ApiWeatherContext";
 
 function App() {
   // Titre de la page (passez le titre en tant que prop)
-  const pageTitle = "Titre de la page actuelle";
+  const pageTitle = "Lyon";
   // rendu de la page
   return (
     <div>
