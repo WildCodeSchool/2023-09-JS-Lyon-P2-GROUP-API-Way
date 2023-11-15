@@ -5,7 +5,7 @@ import DateList from "./components/DateList/DateList";
 import { ApiWeatherProvider } from "./components/contexts/ApiWeatherContext";
 
 function App() {
-  const pageTitle = "Titre de la page actuelle";
+  const pageTitle = "Lyon";
   return (
     <div>
       <header>

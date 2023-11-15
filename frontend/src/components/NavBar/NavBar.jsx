@@ -11,11 +11,11 @@ function Navbar() {
       <div className="centerContent">
         <a href="/accueil">
           <img
-            src="/src/assets/logo2.png"
+            src="/src/assets/logo.png"
             alt="Logo Dhéliat Chronicle"
             className="logoApp"
           />
-          <h1>Dhéliat Chronicle</h1>
+          <h2>Dhéliat Chronicle</h2>
         </a>
       </div>
       <div className="buttonSearchRight">
