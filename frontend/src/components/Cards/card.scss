@@ -69,7 +69,8 @@
 .card {
   width: 100%;
   color: white;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif, "Franklin Gothic Medium", "Arial Narrow",
+    Arial, sans-serif;
   @include unFocus;
   display: flex;
   flex-direction: column;
