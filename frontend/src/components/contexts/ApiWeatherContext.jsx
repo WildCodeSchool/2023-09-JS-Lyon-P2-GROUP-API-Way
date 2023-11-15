@@ -16,10 +16,9 @@ const ApiWeatherContext = createContext();
 
 export function ApiWeatherProvider({ children }) {
   const [search, setSearch] = useState("Lyon");
-  const [weather, setWeather] = useState({});
-
+  const [weather, setWeather] = useState();
   const searchPressed = () => {
-    fetch(`${api.base}weather?q=${search}&units=metric&APPID=${api.key}`)
+    fetch(`${api.base}forecast?q=${search}&units=metric&appid=${api.key}`)
       .then((res) => res.json())
       .then((result) => {
         setWeather(result);
@@ -28,11 +27,16 @@ export function ApiWeatherProvider({ children }) {
 
   useEffect(() => {
     searchPressed();
-  }, []);
+  }, [search]);
 
   const contextValue = useMemo(
-    () => ({ searchPressed, setSearch, weather }),
-    [searchPressed, setSearch, weather]
+    () => ({
+      searchPressed,
+      weather,
+      search,
+      setSearch,
+    }),
+    [searchPressed, setSearch, weather, search]
   );
 
   return (
