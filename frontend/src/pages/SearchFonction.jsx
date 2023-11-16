@@ -6,17 +6,15 @@ function SearchFonction() {
 
   return (
     <div className="weatherAPI">
-      <div className="containerSearch">
-        <div className="search">
-          <input
-            type="text"
-            placeholder="Enter city..."
-            onChange={(e) => actions.setSearch(e.target.value)}
-          />
-          <button type="submit" onClick={searchPressed}>
-            Search
-          </button>
-        </div>
+      <div>
+        <input
+          type="text"
+          placeholder="Enter city/town..."
+          onChange={(e) => actions.setSearch(e.target.value)}
+        />
+        <button type="button" onClick={searchPressed}>
+          Search
+        </button>
       </div>
     </div>
   );
