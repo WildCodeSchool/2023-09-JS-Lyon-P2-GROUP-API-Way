@@ -36,11 +36,7 @@ const router = createBrowserRouter([
     element: <DateList />,
     title: "(ville actuelle)",
   },
-  // {
-  //  path: "/article",
-  //  element: ,
-  //  title: "(date de l'article)",
-  // },
+
   {
     path: "/nodate",
     element: <PageNoDate />,
