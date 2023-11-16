@@ -2,7 +2,7 @@ import "./pageerror.css";
 import React from "react";
 import { Link } from "react-router-dom";
 import searchingFilesImage from "../assets/searchDate.jpg";
-import arrowRightImage from "../assets/arrow-right-solid.svg"; // Utilisez l'instruction d'import pour l'image de la flèche
+import arrowRightImage from "../assets/arrow-right-solid.svg";
 import Navbar from "../components/NavBar/NavBar";
 
 function PageNoDate() {
@@ -19,7 +19,7 @@ function PageNoDate() {
           <Link to="/nouvelle-page">Mais voici une date intéressante</Link>
         </h4>
         <img
-          src={arrowRightImage} // Utilisez la variable que vous avez définie
+          src={arrowRightImage}
           alt="flèche qui va vers la droite pour aller à la page suivante"
           className="nextArrow"
         />

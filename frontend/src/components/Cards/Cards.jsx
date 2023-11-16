@@ -1,8 +1,4 @@
-import Colors from "./Colors";
-import ApiCall from "./ApiCall";
-import Database from "./DataBase/Database";
 import "./card.css";
-import cloudSun from "./assets/cloud-sun.svg";
 import cloud from "./assets/cloud.svg";
 import rain from "./assets/rain.svg";
 import smog from "./assets/smog.svg";
@@ -10,91 +6,131 @@ import snowflake from "./assets/snowflake.svg";
 import storm from "./assets/storm.svg";
 import sunRain from "./assets/sun-rain.svg";
 import sun from "./assets/sun.svg";
+import { useApiWeatherContext } from "../contexts/ApiWeatherContext";
+import Loading from "../Loading/Loading";
 
 const meteoVisuel = [
   {
-    name: "clear sky",
+    main: "Clear",
     class: "clearSky card",
     image: sun,
     description: "soleil",
   },
   {
-    name: "few clouds",
-    class: "fewClouds card",
-    image: cloudSun,
-    description: "partielement nuageux",
-  },
-  {
-    name: "scattered clouds",
+    main: "Clouds",
     class: "scatteredClouds card",
     image: cloud,
     description: "nuageux",
   },
   {
-    name: "broken clouds",
-    class: "brokenClouds card",
-    image: cloud,
-    description: "nuages gris",
-  },
-  {
-    name: "shower rain",
+    main: "Drizzle",
     class: "showerRain card",
     image: rain,
     description: "averses",
   },
   {
-    name: "rain",
+    main: "Rain",
     class: "rain card",
     image: sunRain,
     description: "pluie",
   },
   {
-    name: "thunderstorm",
+    main: "Thunderstorm",
     class: "thunderstorm card",
     image: storm,
     description: "orageux",
   },
   {
-    name: "snow",
+    main: "Snow",
     class: "snow card",
     image: snowflake,
     description: "neige",
   },
   {
-    name: "mist",
+    main: "Mist",
     class: "mist card",
     image: smog,
     description: "brouillard",
   },
 ];
 
+function getNextTargetDate(origin, jour) {
+  const target = new Date(origin.getTime());
+  target.setUTCDate(origin.getUTCDate() + jour);
+  target.setUTCHours(11, 0, 0, 0);
+  return target.getTime() / 1000;
+}
+
 function Cards() {
+  const { weather } = useApiWeatherContext();
+
+  if (weather === undefined) {
+    return <Loading />;
+  }
+
+  const jour1 = new Date(weather.list[0].dt * 1000);
+  const ecartJour2 = 1;
+  const ecartJour3 = 2;
+
+  const dtJour2 = getNextTargetDate(jour1, ecartJour2);
+  const dtJour3 = getNextTargetDate(jour1, ecartJour3);
+
+  const jour2 = weather.list.find((element) => element.dt > dtJour2);
+  const jour3 = weather.list.find((element) => element.dt > dtJour3);
+
+  const meteoJ1 = [
+    {
+      dt: weather.list[0].dt,
+      date: weather.list[0].dt_txt.slice(0, 10),
+      temperature: Math.round(weather.list[0].main.temp),
+    },
+    {
+      dt: dtJour2,
+      date: jour2.dt_txt.slice(0, 10),
+      temperature: Math.round(jour2.main.temp),
+    },
+    {
+      dt: dtJour3,
+      date: jour3.dt_txt.slice(0, 10),
+      temperature: Math.round(jour3.main.temp),
+    },
+  ];
+
+  const meteoMainJ1 = meteoVisuel.find(
+    (element) => element.main === weather.list[0].weather[0].main
+  );
+
+  const meteoMainJ2 = meteoVisuel.find(
+    (element) => element.main === jour2.weather[0].main
+  );
+
+  const meteoMainJ3 = meteoVisuel.find(
+    (element) => element.main === jour3.weather[0].main
+  );
+
   return (
     <div>
-      <div className={meteoVisuel[0].class}>
-        <h3 className="date">58/42</h3>
+      <div className={meteoMainJ1.class}>
+        <h3 className="date">{meteoJ1[0].date}</h3>
         <div className="cardContent">
-          <img src={meteoVisuel[0].image} alt={meteoVisuel[0].description} />
-          <p className="temperature">37°</p>
+          <img src={meteoMainJ1.image} alt={meteoMainJ1.description} />
+          <p className="temperature">{meteoJ1[0].temperature}°</p>
         </div>
       </div>
-      <div className={meteoVisuel[1].class}>
-        <h3 className="date">59/42</h3>
+      <div className={meteoMainJ2.class}>
+        <h3 className="date">{meteoJ1[1].date}</h3>
         <div className="cardContent">
-          <img src={meteoVisuel[1].image} alt={meteoVisuel[1].description} />
-          <p className="temperature">18°</p>
+          <img src={meteoMainJ2.image} alt={meteoMainJ2.description} />
+          <p className="temperature">{meteoJ1[1].temperature}°</p>
         </div>
       </div>
-      <div className={meteoVisuel[2].class}>
-        <h3 className="date">60/42</h3>
+      <div className={meteoMainJ3.class}>
+        <h3 className="date">{meteoJ1[2].date}</h3>
         <div className="cardContent">
-          <img src={meteoVisuel[2].image} alt={meteoVisuel[2].description} />
-          <p className="temperature">52°</p>
+          <img src={meteoMainJ3.image} alt={meteoMainJ3.description} />
+          <p className="temperature">{meteoJ1[2].temperature}°</p>
         </div>
       </div>
-      <Colors />
-      <ApiCall />
-      <Database />
     </div>
   );
 }

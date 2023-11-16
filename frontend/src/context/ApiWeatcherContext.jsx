@@ -6,9 +6,11 @@ import React, {
   useMemo,
 } from "react";
 import PropTypes from "prop-types";
+import dotenv from "dotenv";
 
+dotenv.config();
 const api = {
-  key: "b68e3c8b3a181508b0ac48be82afd936",
+  key: process.env.REACT_APP_API_KEY,
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
