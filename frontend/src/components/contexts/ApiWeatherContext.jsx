@@ -8,7 +8,7 @@ import React, {
 import PropTypes from "prop-types";
 
 const api = {
-  key: "b68e3c8b3a181508b0ac48be82afd936",
+  key: import.meta.env.VITE_SECRET_API_KEY,
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
