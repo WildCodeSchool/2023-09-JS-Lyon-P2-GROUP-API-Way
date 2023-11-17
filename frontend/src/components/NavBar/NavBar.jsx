@@ -9,7 +9,7 @@ function Navbar() {
         <SearchButton /> {/* Utilisez le composant SearchButton à gauche */}
       </div>
       <div className="centerContent">
-        <a href="/accueil">
+        <a href="/accueil?ville=search">
           <img
             src="/src/assets/logo.png"
             alt="Logo Dhéliat Chronicle"

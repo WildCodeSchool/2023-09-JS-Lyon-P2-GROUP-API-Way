@@ -1,23 +1,25 @@
 import { useApiWeatherContext } from "../components/contexts/ApiWeatherContext";
+import "./SearchFunction.css";
 
 function SearchFonction() {
-  const { searchPressed } = useApiWeatherContext;
-  const { actions } = useApiWeatherContext;
+  const { searchPressed, setSearch, setOpenSearchBar } = useApiWeatherContext();
+
+  const handleResearch = () => {
+    searchPressed();
+    setOpenSearchBar(false);
+  };
 
   return (
-    <div className="weatherAPI">
-      <div className="containerSearch">
-        <div className="search">
-          <input
-            type="text"
-            placeholder="Enter city..."
-            onChange={(e) => actions.setSearch(e.target.value)}
-          />
-          <button type="submit" onClick={searchPressed}>
-            Search
-          </button>
-        </div>
-      </div>
+    <div>
+      <input
+        className="search-bar"
+        type="text"
+        placeholder="Enter city/town..."
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      <button className="search-btn" type="button" onClick={handleResearch}>
+        Search
+      </button>
     </div>
   );
 }
