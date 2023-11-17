@@ -1,0 +1,23 @@
+.onboarding-container {
+  display: flex;
+  flex-direction: column;
+}
+.onboarding-container a {
+  display: flex;
+  justify-content: center;
+  height: 50vh;
+  margin: 5%;
+}
+.onboarding-container h1 {
+  font-family: "Roboto", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  text-align: center;
+}
+
+img {
+  border-radius: 25px;
+  height: 100%;
+  width: auto;
+}
+
+/*# sourceMappingURL=onBoarding.css.map */
