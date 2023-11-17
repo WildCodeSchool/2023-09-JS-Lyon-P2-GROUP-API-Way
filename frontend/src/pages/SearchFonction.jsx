@@ -1,5 +1,5 @@
 import { useApiWeatherContext } from "../components/contexts/ApiWeatherContext";
-import "./SearchFunction.css";
+import "./search.css";
 
 function SearchFonction() {
   const { searchPressed, setSearch, setOpenSearchBar } = useApiWeatherContext();
