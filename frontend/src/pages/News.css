@@ -1,0 +1,18 @@
+.news-container {
+  min-height: 80vh;
+  padding-top: 20px;
+}
+
+.news-container li {
+  color: white;
+  font-size: 2rem;
+}
+
+.back-btn {
+  color: white;
+  background-color: rgb(136, 98, 98);
+  border: solid white 2px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 10px;
+}

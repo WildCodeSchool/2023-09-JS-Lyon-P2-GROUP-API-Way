@@ -9,6 +9,7 @@
   flex-direction: column;
   align-content: flex-start;
   justify-content: space-around;
+  transition: all 0.4s ease-in;
 }
 .card .temperature {
   font-size: 40pt;
@@ -69,6 +70,31 @@
 .card:hover img {
   height: 14vh;
   width: 14vh;
+}
+
+.see-news-btn {
+  border: solid black 2px;
+  border-radius: 5px;
+  background-color: rgb(136, 98, 98);
+  height: 60%;
+  padding: 0 20px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in;
+  text-decoration: none;
+}
+
+.see-news-btn button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: white;
+}
+.see-news-btn:hover {
+  background-color: #333333;
+  scale: 1.04;
 }
 
 /*# sourceMappingURL=card.css.map */

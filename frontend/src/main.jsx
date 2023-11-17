@@ -5,10 +5,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
 import Onboarding from "./pages/Onboarding";
-import SearchPage from "./pages/SearchPage";
+import News from "./pages/News";
 import PageError from "./pages/PageError";
 import DateList from "./components/DateList/DateList";
 import PageNoDate from "./pages/PageNoDate";
+import { ApiWeatherProvider } from "./components/contexts/ApiWeatherContext";
 
 const router = createBrowserRouter([
   {
@@ -22,9 +23,9 @@ const router = createBrowserRouter([
     title: "(ville actuelle)",
   },
   {
-    path: "/recherche",
-    element: <SearchPage />,
-    title: "Recherche",
+    path: "/accueil/news",
+    element: <News />,
+    title: "news",
   },
   {
     path: "/*",
@@ -48,6 +49,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ApiWeatherProvider>
+      <RouterProvider router={router} />
+    </ApiWeatherProvider>
   </React.StrictMode>
 );

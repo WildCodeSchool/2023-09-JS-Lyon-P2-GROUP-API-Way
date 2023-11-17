@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./card.css";
 import cloud from "./assets/cloud.svg";
 import rain from "./assets/rain.svg";
@@ -115,6 +116,9 @@ function Cards() {
         <div className="cardContent">
           <img src={meteoMainJ1.image} alt={meteoMainJ1.description} />
           <p className="temperature">{meteoJ1[0].temperature}°</p>
+          <Link className="see-news-btn" to="news">
+            <button type="button">Voir les news</button>
+          </Link>
         </div>
       </div>
       <div className={meteoMainJ2.class}>
@@ -122,6 +126,9 @@ function Cards() {
         <div className="cardContent">
           <img src={meteoMainJ2.image} alt={meteoMainJ2.description} />
           <p className="temperature">{meteoJ1[1].temperature}°</p>
+          <Link className="see-news-btn" to="news">
+            <button type="button">Voir les news</button>
+          </Link>
         </div>
       </div>
       <div className={meteoMainJ3.class}>
@@ -129,6 +136,9 @@ function Cards() {
         <div className="cardContent">
           <img src={meteoMainJ3.image} alt={meteoMainJ3.description} />
           <p className="temperature">{meteoJ1[2].temperature}°</p>
+          <Link className="see-news-btn" to="news">
+            <button type="button">Voir les news</button>
+          </Link>
         </div>
       </div>
     </div>
