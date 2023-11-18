@@ -107,25 +107,35 @@ function Cards() {
   const meteoMainJ3 = meteoVisuel.find(
     (element) => element.main === jour3.weather[0].main
   );
+  const dateFormatter = (date) => {
+    return new Date(date).toLocaleDateString("fr-FR", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+    });
+  };
+  const formattedDate1 = dateFormatter(meteoJ1[0].date);
+  const formattedDate2 = dateFormatter(meteoJ1[1].date);
+  const formattedDate3 = dateFormatter(meteoJ1[2].date);
 
   return (
     <div>
       <div className={meteoMainJ1.class}>
-        <h3 className="date">{meteoJ1[0].date}</h3>
+        <h3 className="date">{formattedDate1}</h3>
         <div className="cardContent">
           <img src={meteoMainJ1.image} alt={meteoMainJ1.description} />
           <p className="temperature">{meteoJ1[0].temperature}°</p>
         </div>
       </div>
       <div className={meteoMainJ2.class}>
-        <h3 className="date">{meteoJ1[1].date}</h3>
+        <h3 className="date">{formattedDate2}</h3>
         <div className="cardContent">
           <img src={meteoMainJ2.image} alt={meteoMainJ2.description} />
           <p className="temperature">{meteoJ1[1].temperature}°</p>
         </div>
       </div>
       <div className={meteoMainJ3.class}>
-        <h3 className="date">{meteoJ1[2].date}</h3>
+        <h3 className="date">{formattedDate3}</h3>
         <div className="cardContent">
           <img src={meteoMainJ3.image} alt={meteoMainJ3.description} />
           <p className="temperature">{meteoJ1[2].temperature}°</p>
