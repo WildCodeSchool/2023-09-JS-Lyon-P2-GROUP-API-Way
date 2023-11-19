@@ -6,6 +6,10 @@ import SearchFonction from "./pages/SearchFonction";
 
 function App() {
   const { search, openSearchBar } = useApiWeatherContext();
+  //  const { compareJ1, openCompareJ1 } = useApiWeatherContext();
+  //  const { compareJ2, openCompareJ2 } = useApiWeatherContext();
+  //  const { compare3, openCompareJ3 } = useApiWeatherContext();
+
   return (
     <div>
       <header>

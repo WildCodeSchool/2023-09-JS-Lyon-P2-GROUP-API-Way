@@ -118,6 +118,42 @@ function Cards() {
   const formattedDate2 = dateFormatter(meteoJ1[1].date);
   const formattedDate3 = dateFormatter(meteoJ1[2].date);
 
+  async function randomNews(buttonId) {
+    const apiKey = process.env.VITE_SECRET_NEWS_API_KEY;
+
+    const date = new Date(
+      Date.now() -
+        Math.floor(Math.random() * (Date.now() - new Date(2009, 0, 1)))
+    ).toISOString();
+
+    const response = await fetch(
+      `https://newsapi.org/v2/top-headlines?country=fr&language=fr&publishedAt<2023-01-01&publishedAt>2008-12-31&pageSize=1&apiKey=${apiKey}`
+    );
+
+    const articles = await response.json();
+
+    const modal = document.getElementById("modal");
+    modal.style.display = "block";
+    modal.innerHTML = `
+      <h1>Actualité aléatoire</h1>
+      <p>
+        <strong>Titre : </strong> ${articles.articles[0].title}
+      </p>
+      <p>
+        <strong>Description : </strong> ${articles.articles[0].description}
+      </p>
+      <p>
+        <strong>Date : </strong> ${date}
+      </p>
+      <p>
+        <strong>URL : </strong> <a href="${articles.articles[0].url}">${articles.articles[0].url}</a>
+      </p>
+    `;
+
+    modal.classList.add(`compare-${buttonId}`);
+    return modal;
+  }
+
   return (
     <div>
       <div className={meteoMainJ1.class}>
@@ -130,6 +166,7 @@ function Cards() {
             aria-label="bouton de comparaison avec aujourd'hui"
             className="compare"
             id="compareJ1"
+            onClick={() => randomNews("compareJ1")}
           >
             comparer
           </button>
@@ -142,9 +179,10 @@ function Cards() {
           <p className="temperature">{meteoJ1[1].temperature}°</p>
           <button
             type="button"
-            aria-label="bouton de comparaison avec demain"
+            aria-label="bouton de comparaison avec aujourd'hui"
             className="compare"
-            id="compareJ2"
+            id="compareJ1"
+            onClick={() => randomNews("compareJ1")}
           >
             comparer
           </button>
@@ -159,7 +197,8 @@ function Cards() {
             type="button"
             aria-label="bouton de comparaison avec aujourd'hui"
             className="compare"
-            id="compareJ3"
+            id="compareJ1"
+            onClick={() => randomNews("compareJ1")}
           >
             comparer
           </button>
