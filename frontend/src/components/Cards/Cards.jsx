@@ -125,6 +125,14 @@ function Cards() {
         <div className="cardContent">
           <img src={meteoMainJ1.image} alt={meteoMainJ1.description} />
           <p className="temperature">{meteoJ1[0].temperature}°</p>
+          <button
+            type="button"
+            aria-label="bouton de comparaison avec aujourd'hui"
+            className="compare"
+            id="compareJ1"
+          >
+            comparer
+          </button>
         </div>
       </div>
       <div className={meteoMainJ2.class}>
@@ -132,6 +140,14 @@ function Cards() {
         <div className="cardContent">
           <img src={meteoMainJ2.image} alt={meteoMainJ2.description} />
           <p className="temperature">{meteoJ1[1].temperature}°</p>
+          <button
+            type="button"
+            aria-label="bouton de comparaison avec demain"
+            className="compare"
+            id="compareJ2"
+          >
+            comparer
+          </button>
         </div>
       </div>
       <div className={meteoMainJ3.class}>
@@ -139,6 +155,14 @@ function Cards() {
         <div className="cardContent">
           <img src={meteoMainJ3.image} alt={meteoMainJ3.description} />
           <p className="temperature">{meteoJ1[2].temperature}°</p>
+          <button
+            type="button"
+            aria-label="bouton de comparaison avec aujourd'hui"
+            className="compare"
+            id="compareJ3"
+          >
+            comparer
+          </button>
         </div>
       </div>
     </div>
