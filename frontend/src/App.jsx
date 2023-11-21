@@ -1,23 +1,25 @@
 import "./App.css";
 import Navbar from "./components/NavBar/NavBar";
 import Cards from "./components/Cards/Cards";
-import DateList from "./components/DateList/DateList";
-import { ApiWeatherProvider } from "./components/contexts/ApiWeatherContext";
+import { useApiWeatherContext } from "./components/contexts/ApiWeatherContext";
+import SearchFonction from "./pages/SearchFonction";
 
 function App() {
-  // Titre de la page (passez le titre en tant que prop)
-  const pageTitle = "Titre de la page actuelle";
-  // rendu de la page
+  const { search, openSearchBar } = useApiWeatherContext();
   return (
     <div>
       <header>
-        <h1>{pageTitle}</h1>
+        <h1>{search === "" ? "Lyon" : search}</h1>
       </header>
+      <div
+        className={
+          openSearchBar ? "search-container-open" : "search-container-close"
+        }
+      >
+        <SearchFonction />
+      </div>
       <main>
-        <ApiWeatherProvider>
-          <Cards />
-        </ApiWeatherProvider>
-        <DateList />
+        <Cards />
       </main>
       <footer>
         <div className="footer-content">

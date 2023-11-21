@@ -8,31 +8,54 @@ import React, {
 import PropTypes from "prop-types";
 
 const api = {
-  key: "b68e3c8b3a181508b0ac48be82afd936",
+  key: import.meta.env.VITE_SECRET_API_KEY,
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
 const ApiWeatherContext = createContext();
 
 export function ApiWeatherProvider({ children }) {
-  const [search, setSearch] = useState("Lyon");
-  const [weather, setWeather] = useState({});
-
+  const [openSearchBar, setOpenSearchBar] = useState(false);
+  const [search, setSearch] = useState("");
+  const [weather, setWeather] = useState();
   const searchPressed = () => {
-    fetch(`${api.base}weather?q=${search}&units=metric&APPID=${api.key}`)
+    fetch(
+      `${api.base}forecast?q=${
+        search === "" ? "Lyon" : search
+      }&units=metric&appid=${api.key}`
+    )
       .then((res) => res.json())
       .then((result) => {
         setWeather(result);
       });
   };
 
+  const handleOpenSearch = () => {
+    setOpenSearchBar(!openSearchBar);
+  };
   useEffect(() => {
     searchPressed();
   }, []);
 
   const contextValue = useMemo(
-    () => ({ searchPressed, setSearch, weather }),
-    [searchPressed, setSearch, weather]
+    () => ({
+      searchPressed,
+      weather,
+      search,
+      setSearch,
+      openSearchBar,
+      setOpenSearchBar,
+      handleOpenSearch,
+    }),
+    [
+      searchPressed,
+      setSearch,
+      weather,
+      search,
+      openSearchBar,
+      setOpenSearchBar,
+      handleOpenSearch,
+    ]
   );
 
   return (

@@ -5,16 +5,8 @@
     background-color: $sun;
   }
 
-  &.fewClouds {
-    background-color: $cloudSun;
-  }
-
   &.scatteredClouds {
     background-color: $scatteredCloud;
-  }
-
-  &.brokenClouds {
-    background-color: $brokenCloud;
   }
 
   &.showerRain {
@@ -69,12 +61,14 @@
 .card {
   width: 100%;
   color: white;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif, "Franklin Gothic Medium", "Arial Narrow",
+    Arial, sans-serif;
   @include unFocus;
   display: flex;
   flex-direction: column;
   align-content: flex-start;
   justify-content: space-around;
+  transition: all 0.4s ease-in;
 
   .date {
     display: flex;

@@ -7,7 +7,6 @@ footer {
   align-items: center;
   justify-content: space-between;
 }
-
 h1 {
   text-decoration: none;
   color: white;
@@ -56,12 +55,12 @@ h1 {
   width: 8vh;
   height: 8vh;
   margin-right: 1.5vh;
-}
-.buttonSearchNavBar svg {
-  width: 5vh;
-}
-.buttonSearchNavBar svg path {
-  fill: black;
+  svg {
+    width: 5vh;
+    path {
+      fill: black;
+    }
+  }
 }
 
 .buttonSearchLeft {
@@ -71,19 +70,16 @@ h1 {
 .buttonSearchLeft:focus,
 .buttonSearchRight:focus {
   outline-style: none;
+  svg path {
+    fill: white;
+  }
 }
-.buttonSearchLeft:focus svg path,
-.buttonSearchRight:focus svg path {
-  fill: white;
-}
-
 .buttonSearchLeft:hover,
 .buttonSearchRight:hover {
   outline-style: none;
-}
-.buttonSearchLeft:hover svg path,
-.buttonSearchRight:hover svg path {
-  fill: white;
+  svg path {
+    fill: white;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -94,6 +90,7 @@ h1 {
     font-size: 4vh;
   }
 }
+
 @media (min-width: 1024px) {
   .buttonSearchLeft {
     display: block;
@@ -103,5 +100,3 @@ h1 {
     font-size: 4vh;
   }
 }
-
-/*# sourceMappingURL=navbar.css.map */
