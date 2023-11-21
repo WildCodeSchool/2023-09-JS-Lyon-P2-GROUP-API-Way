@@ -85,15 +85,15 @@ Follow these steps to configure and run the project locally:
 
 ### Cloning the project
 
-1. Clone the repository using the following command:
+Clone the repository using the following command:
 
    ```bash
    git clone git@github.com:WildCodeSchool/2023-09-JS-Lyon-P2-GROUP-API-Way.git
-
+```
 
 ### Access the project directory:
 
-``bash
+```bash
 cd 2023-09-JS-Lyon-P2-GROUP-API-Way
 ```
 
@@ -122,7 +122,7 @@ VITE_SECRET_API_KEY=YOUR_API_KEY
 
 Back in the project directory, run the following command to start the application in development mode:
 
-``bash
+```bash
 npm run dev
 ```
 
