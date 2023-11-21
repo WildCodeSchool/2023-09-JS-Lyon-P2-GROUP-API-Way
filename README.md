@@ -1,67 +1,135 @@
-## Concept
+# Dhéliat Chronicle - FR (ENGLISH BELOW)
 
-This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
-It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying a pedagogical tool.
+Dhéliat Chronicle est une application météo simple qui permet d'afficher les prévisions météorologiques pour les trois prochains jours pour n'importe quelle ville du monde.
 
-## Setup & Use
+## À propos du Projet
 
-### Windows users
+Ce projet a été réalisé dans le cadre de la formation à la Wild Code School. Il a été développé en utilisant les technologies suivantes :
 
-Be sure to run these commands in a git terminal to avoid [issues with newline formats](https://en.wikipedia.org/wiki/Newline#Issues_with_different_newline_formats):
+- **React :** Une bibliothèque JavaScript pour construire des interfaces utilisateur interactives.
+- **Sass :** Un préprocesseur CSS qui facilite l'écriture de feuilles de style en ajoutant des fonctionnalités telles que les variables et les mixins.
 
+## Configuration
+
+Suivez ces étapes pour configurer et exécuter le projet localement :
+
+
+### Clonage du projet
+
+1. Clonez le référentiel à l'aide de la commande suivante :
+
+   ```bash
+   git clone git@github.com:WildCodeSchool/2023-09-JS-Lyon-P2-GROUP-API-Way.git
+
+
+### Accédez au répertoire du projet :
+
+```bash
+cd 2023-09-JS-Lyon-P2-GROUP-API-Way
 ```
-git config --global core.eol lf
-git config --global core.autocrlf false
+
+
+### Installation des dépendances
+
+```bash
+npm install
 ```
 
-### Project Initialization
 
-- In VSCode, install plugins **Prettier - Code formatter** and **ESLint** and configure them
-- Clone this repo, enter it
-- If you are using `yarn` or `pnpm`, adapt the `config/cli` in `package.json`
-- Run command `npm install` (or equivalent using `yarn` or `pnpm`)
-- Create environment files (`.env`) in both `backend` and `frontend`: you can copy `.env.sample` files as starters (**don't** delete them)
+### Configuration de la clé API OpenWeather
 
-### Before you start
+Visitez le site Web d'OpenWeather (https://openweathermap.org/) et créez un compte si vous n'en avez pas déjà un.
 
-- To ensure compatibility and prevent conflicts, please consistently employ a **single** package manager: `npm`, `yarn`, or `pnpm`.
+Une fois connecté, générez une clé API dans la section appropriée du tableau de bord.
 
-### Available Commands
+Créez un fichier .env à la racine du dossier frontend avec le contenu suivant, en remplaçant VOTRE_CLE_API par la clé API que vous avez générée :
 
-- `db:migrate` : Run the database migration script
-- `db:seed` : Run the database seed script
-- `dev` : Starts both servers (frontend + backend) in one terminal
-- `dev-front` : Starts the React frontend server
-- `dev-back` : Starts the Express backend server
-- `lint` : Runs validation tools (will be executed on every _commit_, and refuse unclean code)
+```bash
+VITE_SECRET_API_KEY=VOTRE_CLE_API
+```
 
-## FAQ
 
-### Tools
+## Lancement de l'application
 
-- _Concurrently_ : Allows for several commands to run concurrently in the same CLI
-- _Husky_ : Allows to execute specific commands that trigger on _git_ events
-- _Vite_ : Alternative to _Create-React-App_, packaging less tools for a more fluid experience
-- _ESLint_ : "Quality of code" tool, ensures chosen rules will be enforced
-- _Prettier_ : "Quality of code" tool as well, focuses on the styleguide
-- _ Airbnb Standard_ : One of the most known "standards", even though it's not officially linked to ES/JS
+De retour dans le répertoire du projet, exécutez la commande suivante pour démarrer l'application en mode développement :
 
-### Deployment with Traefik
+```bash
+npm run dev
+```
 
-> ⚠️ Prerequisites : You must have installed and configured Traefik on your VPS beforehand.
-> https://github.com/WildCodeSchool/vps-traefik-starter-kit/
+Ouvrez votre navigateur et accédez à l'URL suivante : http://localhost:3000
 
-For deployment, you have to go to `secrets` → app `actions` on the github repo to insert via `New repository secret` :
 
-- SSH_HOST : IP address of your VPS
-- SSH_USER : SSH login to your VPS
-- SSH_PASSWORD : SSH connection password to your VPS
 
-And a public variable from the tab `/settings/variables/actions`
+## Bonne expérience !
 
-- PROJECT_NAME : the name of the project used to create the subdomain for frontend.
+Merci pour votre test.
 
-The backend subdomain will be automatically created with the suffix -backend.
-The global variable VITE_BACKEND_URL will be automatically created and pre-filled on the basis of this information.
 
-Use this same tab to add the other environment variables required for the project if any.
+
+# Dhéliat Chronicle
+
+Dhéliat Chronicle is a simple weather application that displays the weather forecast for the next three days for any city in the world.
+
+## About the Project
+
+This project was carried out as part of the Wild Code School training program. It was developed using the following technologies:
+
+- **React :** A JavaScript library for building interactive user interfaces.
+- Sass :** A CSS preprocessor that facilitates the writing of style sheets by adding features such as variables and mixins.
+
+## Configuration
+
+Follow these steps to configure and run the project locally:
+
+
+### Cloning the project
+
+1. Clone the repository using the following command:
+
+   ```bash
+   git clone git@github.com:WildCodeSchool/2023-09-JS-Lyon-P2-GROUP-API-Way.git
+
+
+### Access the project directory:
+
+``bash
+cd 2023-09-JS-Lyon-P2-GROUP-API-Way
+```
+
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+
+### Setting up the OpenWeather API key
+
+Visit the OpenWeather website (https://openweathermap.org/) and create an account if you don't already have one.
+
+Once logged in, generate an API key in the appropriate section of the dashboard.
+
+Create an .env file at the root of the frontend folder with the following content, replacing YOUR_API_KEY with the API key you've generated:
+
+```bash
+VITE_SECRET_API_KEY=YOUR_API_KEY
+```
+
+
+## Launching the application
+
+Back in the project directory, run the following command to start the application in development mode:
+
+``bash
+npm run dev
+```
+
+Open your browser and go to the following URL: http://localhost:3000
+
+
+
+## Good experience!
+
+Thanks for your test.
